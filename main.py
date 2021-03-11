@@ -61,7 +61,7 @@ def run(request):
     parser = argparse.ArgumentParser()
     parser.add_argument('--data', help='json with parameters')
     parser.add_argument('--metadata', help='json with parameters')
-    args = parser.parse_args()
+    #args = parser.parse_args()
     if request is None:
         f = open('argfile.txt','r')
         input_json = json.loads(str(f.read()).replace("'", ""))

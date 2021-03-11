@@ -2,6 +2,7 @@ import logging
 
 logging.getLogger().setLevel(logging.INFO)
 
+
 def reformat_EIA(df):
     col_names = []
     for c in df.columns:

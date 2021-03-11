@@ -29,7 +29,6 @@ def test1(file):
     s = df\
         .rename(columns={df.columns[1]: 'Date'})\
         .to_csv(index=False, sep=';')
-    #book = xlrd.open_workbook(file)
     #print("The number of worksheets is {}".format(book.nsheets))
     print(s)
 
