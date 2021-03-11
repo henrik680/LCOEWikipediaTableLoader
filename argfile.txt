@@ -1,0 +1,1 @@
+'{"bucket_target":"prod-bucket.renewalytics.io","data_path_url":"https://en.wikipedia.org/wiki/Cost_of_electricity_by_source","metadata":"{\"source\":\"Wikipedia\",\"content\":\"LCOE per Region\",\"regions\":\"Australia, French, German, Middle East, UK, EIA, OpenEI\"}","destination_blob_name":"source_data/lcoe/LcoeWikipedia"}'
