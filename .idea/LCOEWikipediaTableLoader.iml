@@ -3,6 +3,7 @@
   <component name="NewModuleRootManager">
     <content url="file://$MODULE_DIR$" />
     <content url="file://$MODULE_DIR$/../RenewalyticsGcpStorageLib" />
+    <content url="file://$MODULE_DIR$/../RenewalyticsImportersMetadataLib" />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
   </component>

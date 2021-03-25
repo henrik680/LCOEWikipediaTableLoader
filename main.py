@@ -6,6 +6,7 @@ import json
 from urllib.request import urlopen
 from TableFormatterRegion import *
 from RenewalyticsGcpStorageLib import * ### Python package dependency google-cloud-storage
+from RenewalyticsImportersMetadataLib import *
 
 logging.getLogger().setLevel(logging.INFO)
 project_name = 'LCOEWikipediaTableLoader'
@@ -61,7 +62,7 @@ def run(request):
     parser = argparse.ArgumentParser()
     parser.add_argument('--data', help='json with parameters')
     parser.add_argument('--metadata', help='json with parameters')
-    #args = parser.parse_args()
+    args = parser.parse_args()
     if request is None:
         f = open('argfile.txt','r')
         input_json = json.loads(str(f.read()).replace("'", ""))
@@ -70,8 +71,9 @@ def run(request):
     logging.info("request.args: {}".format(input_json))
     bucket_name = input_json['bucket_target']
     url = input_json['data_path_url']
-    metadata = json.loads(input_json['metadata'])
-    metadata['data_path_url'] = url
+    metadata = importer_metadata(content_description='Levelized Cost of Electricity',
+                                 input_json=input_json, path_url=url, project_name=project_name,
+                                 language='en', source='Wikipedia')
     destination_blob_name = input_json['destination_blob_name']
     logging.info("\nbucket_name: {}\nmetadata: {}\nurl: {}\ndestination_blob_name: {}".format(
        bucket_name, metadata, url, destination_blob_name))
